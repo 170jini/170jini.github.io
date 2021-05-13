@@ -23,7 +23,8 @@ email: 170jini@gmail.com
 description: 소프트웨어의 모든 것은 변한다. 변화는 반드시 일어나기 때문에, 문제가 되는 것은 변화가 아니다.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://170jini.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: ryansim
+#twitter_username: 심선보
+#facebook_username: ryan.sim.794
 github_username:  170jini
 
 # Build settings
