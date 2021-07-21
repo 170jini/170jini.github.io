@@ -25,6 +25,7 @@ comments: true
 소노문델피노 도착 (15시부터 체크인 가능)   
 
 #### <span style="color:blue">8월 14일(토)</span>   
+등대해수욕장 예약(09시 ~ 12시 이용가능)   
 
 #### <span style="color:blue">8월 15일(일)</span>   
 
