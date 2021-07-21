@@ -7,26 +7,28 @@ gh-badge: [star, fork, follow]
 tags: [클래스, 객체]
 comments: true
 ---
-#### <span style="color:blue">8월 11일(수)</span>   
+##### <span style="color:blue">8월 11일(수)</span>   
 마포태영아파트 출발   
 죽변오첩반상 점심   
 죽변수산물시장 구경   
 덕구온천리조트콘도 도착 (15시부터 체크인 가능)   
 덕구온천리조트 셀프다이닝 저녁   
 
-#### <span style="color:blue">8월 12일(목)</span>   
+##### <span style="color:blue">8월 12일(목)</span>   
 진곰탕 아침   
 뉴동해관광호텔 도착 (15시부터 체크인 가능)   
 동해한우설렁탕 점심   
 다어버구이 저녁   
 
-#### <span style="color:blue">8월 13일(금)</span>   
+##### <span style="color:blue">8월 13일(금)</span>   
 뉴동해관광호텔 조식   
 소노문델피노 도착 (15시부터 체크인 가능)   
 
-#### <span style="color:blue">8월 14일(토)</span>   
-등대해수욕장 예약(09시 ~ 12시 이용가능)   
+##### <span style="color:blue">8월 14일(토)</span>
+###### 등대해수욕장 (9시~ 12시 예약)
+강원도 속초시 영랑동에 있는 해수욕장으로 2004년 간이 해수욕장으로 개장했다. 해수욕장 바로 옆에 등대가 있어 이와 같은 명칭이 붙었다. 모래가 다소 거칠고 모래밭도 좁은 편이나, 주변의 유명 해수욕장에 비해 한적한 편이라 호젓하고 조용한 휴가를 즐기려는 사람들에게 적당하다. 여름 이외의 계절에도 주변의 영금정, 동명항 등의 탐방을 연계한 바다 여행지로 각광받고 있다. 특히 설악권 여행의 중심인 속초시내권에 속해 있어 교통이 편리하다는 장점이 있다.
+![등대해수욕장](/assets/img/beach.jpg)
 
-#### <span style="color:blue">8월 15일(일)</span>   
+##### <span style="color:blue">8월 15일(일)</span>   
 
-#### <span style="color:blue">8월 16일(월)</span>   
+##### <span style="color:blue">8월 16일(월)</span>   
