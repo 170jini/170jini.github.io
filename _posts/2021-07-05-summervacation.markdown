@@ -21,7 +21,8 @@ comments: true
 다어버구이 저녁   
 
 ##### <span style="color:blue">8월 13일(금)</span>   
-뉴동해관광호텔 조식   
+뉴동해관광호텔 조식
+오미냉면 점심   
 소노문델피노 도착 (15시부터 체크인 가능)   
 
 ##### <span style="color:blue">8월 14일(토)</span>
@@ -30,5 +31,6 @@ comments: true
 ![등대해수욕장](/assets/img/beach.jpg)
 
 ##### <span style="color:blue">8월 15일(일)</span>   
+###### 미시령 폭포민박 피크닉예약 (9시~18시 예약)
 
 ##### <span style="color:blue">8월 16일(월)</span>   
