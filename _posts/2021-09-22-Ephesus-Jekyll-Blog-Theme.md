@@ -1,6 +1,6 @@
 ---
 title: "Ephesus Jekyll Blog Theme"
-date: 2021-11-17T00:00:00+00:00
+date: 2021-09-22T00:00:00+00:00
 author: Hakan Torun
 layout: post
 permalink: /ephesus-jekyll-blog-theme/
