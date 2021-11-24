@@ -1,0 +1,28 @@
+I"&<h2 id="daum-검색">Daum 검색</h2>
+<p>Daum 검색 API는 포털 사이트 Daum에서 방대한 웹 문서, 동영상, 이미지, 블로그, 책, 카페를 검색하는 기능을 제공합니다. 검색 결과는 JSON 객체로 전달돼 서비스에서 자유롭게 출력하거나 활용할 수 있습니다.</p>
+<h3 id="웹문서-검색">웹문서 검색</h3>
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="k">fun</span> <span class="nf">webDocument</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">sort</span><span class="p">:</span> <span class="nc">String</span> <span class="p">=</span> <span class="s">""</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">GlobalScope</span><span class="p">.</span><span class="nf">launch</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="py">URI_BASE</span> <span class="p">=</span> <span class="s">"https://dapi.kakao.com/v2/search/web?"</span>
+        <span class="kd">val</span> <span class="py">url</span> <span class="p">=</span> <span class="nc">URL</span><span class="p">(</span><span class="nc">URI_BASE</span><span class="p">.</span><span class="nf">plus</span><span class="p">(</span><span class="s">"query="</span><span class="p">).</span><span class="nf">plus</span><span class="p">(</span><span class="n">query</span><span class="p">))</span>
+        <span class="kd">val</span> <span class="py">huc</span> <span class="p">=</span> <span class="n">url</span><span class="p">.</span><span class="nf">openConnection</span><span class="p">()</span> <span class="k">as</span> <span class="nc">HttpURLConnection</span>
+        <span class="n">huc</span><span class="p">.</span><span class="n">requestMethod</span> <span class="p">=</span> <span class="s">"GET"</span>
+        <span class="n">huc</span><span class="p">.</span><span class="nf">addRequestProperty</span><span class="p">(</span><span class="s">"Authorization"</span><span class="p">,</span> <span class="s">"KakaoAK b9f835b05ae975cbd96fa4be611009ec"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">huc</span><span class="p">.</span><span class="n">responseCode</span> <span class="p">==</span> <span class="nc">HttpURLConnection</span><span class="p">.</span><span class="nc">HTTP_OK</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">val</span> <span class="py">streamReader</span> <span class="p">=</span> <span class="nc">InputStreamReader</span><span class="p">(</span><span class="n">huc</span><span class="p">.</span><span class="n">inputStream</span><span class="p">)</span>
+            <span class="kd">val</span> <span class="py">buffered</span> <span class="p">=</span> <span class="nc">BufferedReader</span><span class="p">(</span><span class="n">streamReader</span><span class="p">)</span>
+            <span class="kd">val</span> <span class="py">content</span> <span class="p">=</span> <span class="nc">StringBuilder</span><span class="p">()</span>
+            <span class="k">while</span> <span class="p">(</span><span class="k">true</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">val</span> <span class="py">data</span> <span class="p">=</span> <span class="n">buffered</span><span class="p">.</span><span class="nf">readLine</span><span class="p">()</span> <span class="o">?:</span> <span class="k">break</span>
+                <span class="n">content</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="n">buffered</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+            <span class="n">huc</span><span class="p">.</span><span class="nf">disconnect</span><span class="p">()</span>
+            <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span><span class="nc">TAG</span><span class="p">,</span> <span class="s">"${content}"</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span><span class="nc">TAG</span><span class="p">,</span> <span class="s">"responseCode = ${huc.responseCode}"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+:ET
