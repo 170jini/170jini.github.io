@@ -1,0 +1,77 @@
+I"H1<p>Daum 검색 API는 포털 사이트 Daum에서 방대한 웹 문서, 동영상, 이미지, 블로그, 책, 카페를 검색하는 기능을 제공합니다. 검색 결과는 JSON 객체로 전달돼 서비스에서 자유롭게 출력하거나 활용할 수 있습니다.</p>
+<h2 id="웹문서-검색">웹문서 검색</h2>
+<p>다음 검색 서비스에서 질의어로 웹 문서를 검색합니다. 원하는 검색어와 함께 결과 형식 파라미터를 선택적으로 추가할 수 있습니다. 응답 바디는 meta, documents로 구성된 JSON 객체입니다.</p>
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="cm">/**
+ * 키워드로 Daum 포털 사이트에서 관련 웹 문서 검색
+ * @param query - 검색을 원하는 질의어 (Required)
+ * @param sort - 결과 문서 정렬 방식, accuracy(정확도순) 또는 recency(최신순), 기본 값 accuracy
+ * @param page - 결과 페이지 번호, 1~50 사이의 값, 기본 값 1
+ * @param size - 한 페이지에 보여질 문서 수, 1~50 사이의 값, 기본 값 10
+ */</span>
+<span class="k">fun</span> <span class="nf">webDocument</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">sort</span><span class="p">:</span> <span class="nc">String</span> <span class="p">=</span> <span class="s">"accuracy"</span><span class="p">,</span> <span class="n">page</span><span class="p">:</span> <span class="nc">Int</span> <span class="p">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="nc">Int</span> <span class="p">=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">GlobalScope</span><span class="p">.</span><span class="nf">launch</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="py">URI_BASE</span> <span class="p">=</span> <span class="s">"https://dapi.kakao.com/v2/search/web?"</span>
+        <span class="kd">val</span> <span class="py">obj</span> <span class="p">=</span> <span class="nc">URL</span><span class="p">(</span>
+            <span class="nc">URI_BASE</span><span class="p">.</span><span class="nf">plus</span><span class="p">(</span><span class="s">"query="</span><span class="p">).</span><span class="nf">plus</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+                <span class="p">.</span><span class="nf">plus</span><span class="p">(</span><span class="s">"&amp;sort="</span><span class="p">).</span><span class="nf">plus</span><span class="p">(</span><span class="n">sort</span><span class="p">)</span>
+                <span class="p">.</span><span class="nf">plus</span><span class="p">(</span><span class="s">"&amp;page="</span><span class="p">).</span><span class="nf">plus</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+                <span class="p">.</span><span class="nf">plus</span><span class="p">(</span><span class="s">"&amp;size="</span><span class="p">).</span><span class="nf">plus</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="kd">val</span> <span class="py">huc</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="nf">openConnection</span><span class="p">()</span> <span class="k">as</span> <span class="nc">HttpURLConnection</span>
+        <span class="n">huc</span><span class="p">.</span><span class="n">requestMethod</span> <span class="p">=</span> <span class="s">"GET"</span>
+        <span class="n">huc</span><span class="p">.</span><span class="nf">addRequestProperty</span><span class="p">(</span><span class="s">"Authorization"</span><span class="p">,</span> <span class="s">"KakaoAK b9f835b05ae975cbd96fa4be611009ec"</span><span class="p">)</span>
+        <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span><span class="nc">TAG</span><span class="p">,</span> <span class="s">"responseCode: ${huc.responseCode}"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">huc</span><span class="p">.</span><span class="n">responseCode</span> <span class="p">==</span> <span class="nc">HttpURLConnection</span><span class="p">.</span><span class="nc">HTTP_OK</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">val</span> <span class="py">streamReader</span> <span class="p">=</span> <span class="nc">InputStreamReader</span><span class="p">(</span><span class="n">huc</span><span class="p">.</span><span class="n">inputStream</span><span class="p">)</span>
+            <span class="kd">val</span> <span class="py">buffered</span> <span class="p">=</span> <span class="nc">BufferedReader</span><span class="p">(</span><span class="n">streamReader</span><span class="p">)</span>
+            <span class="kd">val</span> <span class="py">content</span> <span class="p">=</span> <span class="nc">StringBuilder</span><span class="p">()</span>
+            <span class="k">while</span> <span class="p">(</span><span class="k">true</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">val</span> <span class="py">data</span> <span class="p">=</span> <span class="n">buffered</span><span class="p">.</span><span class="nf">readLine</span><span class="p">()</span> <span class="o">?:</span> <span class="k">break</span>
+                <span class="n">content</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="n">buffered</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+            <span class="n">huc</span><span class="p">.</span><span class="nf">disconnect</span><span class="p">()</span>
+            <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span><span class="nc">TAG</span><span class="p">,</span> <span class="s">"${content}"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="동영상-검색">동영상 검색</h2>
+<p>카카오 TV, 유투브(Youtube) 등 서비스에서 질의어로 동영상을 검색합니다. 원하는 검색어와 함께 결과 형식 파라미터를 선택적으로 추가할 수 있습니다. 응답 바디는 meta, documents로 구성된 JSON 객체입니다.</p>
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="cm">/**
+ * 키워드로 Youtube, 카카오TV 등 서비스에서 관련 동영상 검색
+ * @param query - 검색을 원하는 질의어 (Required)
+ * @param sort - 결과 문서 정렬 방식, accuracy(정확도순) 또는 recency(최신순), 기본 값 accuracy
+ * @param page - 결과 페이지 번호, 1~50 사이의 값, 기본 값 1
+ * @param size - 한 페이지에 보여질 문서 수, 1~50 사이의 값, 기본 값 10
+ */</span>
+<span class="k">fun</span> <span class="nf">video</span><span class="p">(</span><span class="n">query</span><span class="p">:</span> <span class="nc">String</span><span class="p">,</span> <span class="n">sort</span><span class="p">:</span> <span class="nc">String</span> <span class="p">=</span> <span class="s">"accuracy"</span><span class="p">,</span> <span class="n">page</span><span class="p">:</span> <span class="nc">Int</span> <span class="p">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="nc">Int</span> <span class="p">=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nc">GlobalScope</span><span class="p">.</span><span class="nf">launch</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="py">URI_BASE</span> <span class="p">=</span> <span class="s">"https://dapi.kakao.com/v2/search/vclip?"</span>
+        <span class="kd">val</span> <span class="py">obj</span> <span class="p">=</span> <span class="nc">URL</span><span class="p">(</span>
+            <span class="nc">URI_BASE</span><span class="p">.</span><span class="nf">plus</span><span class="p">(</span><span class="s">"query="</span><span class="p">).</span><span class="nf">plus</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+                <span class="p">.</span><span class="nf">plus</span><span class="p">(</span><span class="s">"&amp;sort="</span><span class="p">).</span><span class="nf">plus</span><span class="p">(</span><span class="n">sort</span><span class="p">)</span>
+                <span class="p">.</span><span class="nf">plus</span><span class="p">(</span><span class="s">"&amp;page="</span><span class="p">).</span><span class="nf">plus</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+                <span class="p">.</span><span class="nf">plus</span><span class="p">(</span><span class="s">"&amp;size="</span><span class="p">).</span><span class="nf">plus</span><span class="p">(</span><span class="n">size</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="kd">val</span> <span class="py">huc</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="nf">openConnection</span><span class="p">()</span> <span class="k">as</span> <span class="nc">HttpURLConnection</span>
+        <span class="n">huc</span><span class="p">.</span><span class="n">requestMethod</span> <span class="p">=</span> <span class="s">"GET"</span>
+        <span class="n">huc</span><span class="p">.</span><span class="nf">addRequestProperty</span><span class="p">(</span><span class="s">"Authorization"</span><span class="p">,</span> <span class="s">"KakaoAK b9f835b05ae975cbd96fa4be611009ec"</span><span class="p">)</span>
+        <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span><span class="nc">TAG</span><span class="p">,</span> <span class="s">"responseCode: ${huc.responseCode}"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">huc</span><span class="p">.</span><span class="n">responseCode</span> <span class="p">==</span> <span class="nc">HttpURLConnection</span><span class="p">.</span><span class="nc">HTTP_OK</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">val</span> <span class="py">streamReader</span> <span class="p">=</span> <span class="nc">InputStreamReader</span><span class="p">(</span><span class="n">huc</span><span class="p">.</span><span class="n">inputStream</span><span class="p">)</span>
+            <span class="kd">val</span> <span class="py">buffered</span> <span class="p">=</span> <span class="nc">BufferedReader</span><span class="p">(</span><span class="n">streamReader</span><span class="p">)</span>
+            <span class="kd">val</span> <span class="py">content</span> <span class="p">=</span> <span class="nc">StringBuilder</span><span class="p">()</span>
+            <span class="k">while</span> <span class="p">(</span><span class="k">true</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">val</span> <span class="py">data</span> <span class="p">=</span> <span class="n">buffered</span><span class="p">.</span><span class="nf">readLine</span><span class="p">()</span> <span class="o">?:</span> <span class="k">break</span>
+                <span class="n">content</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+            <span class="p">}</span>
+            <span class="n">buffered</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
+            <span class="n">huc</span><span class="p">.</span><span class="nf">disconnect</span><span class="p">()</span>
+            <span class="nc">Log</span><span class="p">.</span><span class="nf">d</span><span class="p">(</span><span class="nc">TAG</span><span class="p">,</span> <span class="s">"${content}"</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+:ET
