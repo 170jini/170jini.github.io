@@ -1,34 +1,35 @@
-# Site settings
-site: Ephesus
-title: Ephesus - Minimalist Jekyll Theme
-keywords: ephesus, blog
+site: Gesko
+title: Gesko
+greetings: Hi 👋
 description: >-
-  Ephesus - Minimalist Jekyll Theme
+  just a minimalist, personal blog
 lang: en-US
-timezone:  Europe/Istanbul
-repo: https://github.com/onepase/Ephesus # site repo [optional]
-google_verify:      XXX # Put your Google Verification here
-google_analytics:   UA-XXXXXXXX-00 # Put your Google Analytics code
-discus-identifier:  XXX
+timezone:  Europe/Rome
+repo: https://github.com/p0wex/Gesko # site repo [optional]
+data-theme: dark # default theme "dark" | "light"
+discus-identifier: powex # replace with your disqus shortname
 
-# Author settings
 author:
-  name: Ryan Sim
-  bio: Computer Engineer @pardinus <br> Founder @zaqa <br> Open Source /#linux
-  picture: assets/images/profile.jpg 
-  github: onepase # github username
-  twitter: onepase # twitter username
-  facebook: onepase # facebook username
-  instagram: onepase # instagram username
-  youtube: https://www.youtube.com/channel/UCMmAto-wxBootXN91AzBiDg # youtube username
-  linkedin: hakantorun # linkedin username
+  name: gesko
+  bio: just a minimalist, personal blog
+  userpicture: 
+  username: # general username
+  github: # github username
+  twitter: # twitter username
   email: your-email@email.com # email adress
 
+# Font Settings
+googlewebfonts: family=Play:wght@400;700&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,900
 
 # URL settings
-url: "http://127.0.0.1:4000" # Domain Name of host. [username].github.io for github pages
-baseurl: "" # sub folder for jekyll site. only if jekyll site not in root of host. leave blank if not wishd. always add / in front.
+url: "https://p0wex.github.io" # Domain Name of host. [username].github.io for github pages
+baseurl: "/Gesko" # sub folder for jekyll site. only if jekyll site not in root of host. leave blank if not wishd. always add / in front.
 permalink: pretty
+
+# local
+# url: "http://localhost:4000" # 
+# baseurl: "" # 
+
 
 markdown: kramdown
 kramdown:
@@ -44,13 +45,19 @@ exclude:
   - LICENSE.md
   - README.md
   - CONTRIBUTING.md
+  
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+
+sass:
+  sass_dir: _sass
+  style: compressed
 
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-relative-links
-paginate: 20
-paginate_path: "/page/:num"
 
 collections:
   pages:
@@ -58,7 +65,7 @@ collections:
     permalink: /:name
   posts:
     output: true
-    permalink: /:slug
+    permalink: /:year/:month/:day/:slug
   
 defaults:
   -
@@ -82,3 +89,5 @@ defaults:
 relative_links:
   enabled:     true
   collections: false
+
+
