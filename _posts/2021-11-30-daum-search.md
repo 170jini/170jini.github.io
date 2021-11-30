@@ -7,6 +7,7 @@ tags:
 minute: 1
 ---
 #### 웹문서
-GET
-https://dapi.kakao.com/v2/search/web?query={검색을 원하는 질의어}&sort=
-Authorization: KakaoAK {REST_API_KEY}
+HTTP/1.1    
+GET    
+Authorization: KakaoAK {REST_API_KEY}    
+https://dapi.kakao.com/v2/search/web?query=이효리&sort=accuracy&page=1&size=10    
