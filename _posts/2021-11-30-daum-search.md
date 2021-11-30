@@ -10,5 +10,11 @@ minute: 1
 URL - https://dapi.kakao.com/v2/search/web?query=이효리&sort=accuracy&page=1&size=10    
 2. [동영상](https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-video)      
 URL - https://dapi.kakao.com/v2/search/vclip?query=AOA&sort=accuracy&page=1&size=15    
-2. [이미지](https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-image)    
+3. [이미지](https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-image)    
 URL - https://dapi.kakao.com/v2/search/image?query=설현&sort=accuracy&page=1&size=80    
+4. [블로그](https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-blog)    
+URL - https://dapi.kakao.com/v2/search/blog?query=https://brunch.co.kr/@tourism 집짓기&sort=accuracy&page=1&size=10    
+5. [책](https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-book)    
+URL - https://dapi.kakao.com/v3/search/book?query=미움받을 용기&sort=accuracy&page=1&size=10    
+5. [카페](https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-cafe)    
+URL - https://dapi.kakao.com/v2/search/cafe?query=아이유&sort=accuracy&page=1&size=10    
