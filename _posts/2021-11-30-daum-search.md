@@ -10,4 +10,15 @@ minute: 1
 GET /v2/search/web HTTP/1.1
 Host: dapi.kakao.com
 Authorization: KakaoAK {REST_API_KEY}
+
+{
+    meta {
+        total_count (Integer): 검색된 문서 수
+        pageable_count (Integer): total_count 중 노출 가능 문서 수
+        is_end (Boolean): 현재 페이지가 마지막 페이지인지 여부, 값이 false면 page를 증가시켜 다음 페이지를 요청할 수 있음
+    }
+    [documents] {
+        title (String): 문서 제목
+    }
+}
 ```
