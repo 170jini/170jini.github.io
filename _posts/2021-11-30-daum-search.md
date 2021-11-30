@@ -14,7 +14,7 @@ URL - https://dapi.kakao.com/v2/search/web?query=이효리&sort=accuracy&page=1&
 Method - GET    
 Property - Authorization: KakaoAK {REST_API_KEY}    
 URL - https://dapi.kakao.com/v2/search/vclip?query=AOA&sort=accuracy&page=1&size=15    
-2. [이미지]](https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-image)    
+2. [이미지](https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-image)    
 Method - GET    
 Property - Authorization: KakaoAK {REST_API_KEY}    
 URL - https://dapi.kakao.com/v2/search/image?query=설현&sort=accuracy&page=1&size=80    
