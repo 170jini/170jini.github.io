@@ -4,7 +4,7 @@ title: Daum 검색 (Rest API)
 description: 다음(Daum) 검색 API
 summary: Daum 검색 API는 포털 사이트 Daum에서 방대한 웹 문서, 동영상, 이미지, 블로그, 책, 카페를 검색하는 기능을 제공
 tags: 
-minute: 
+minute: 1
 ---
 1. [웹문서](https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-doc)    
 https://dapi.kakao.com/v2/search/web?query=이효리&sort=accuracy&page=1&size=10    

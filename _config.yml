@@ -1,22 +1,22 @@
-site: Gesko
-title: Gesko
+site: 170jini
+title: 170jini
 greetings: Hi 👋
 description: >-
   just a minimalist, personal blog
-lang: en-US
-timezone:  Europe/Rome
-repo: https://github.com/p0wex/Gesko # site repo [optional]
+lang: kr
+timezone:  Korea/Seoul
+repo: https://github.com/170jini # site repo [optional]
 data-theme: dark # default theme "dark" | "light"
 discus-identifier: powex # replace with your disqus shortname
 
 author:
-  name: gesko
+  name: 170jini
   bio: just a minimalist, personal blog
   userpicture: 
   username: # general username
   github: # github username
   twitter: # twitter username
-  email: your-email@email.com # email adress
+  email: 170jini@gmail.com # email adress
 
 # Font Settings
 googlewebfonts: family=Play:wght@400;700&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,900
