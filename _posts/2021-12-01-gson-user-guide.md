@@ -19,5 +19,6 @@ minute: 1
     5.5. [Collections Examples](https://sites.google.com/site/gson/gson-user-guide#TOC-Collections-Examples)    
         5.5.1. [Collections Limitations](https://sites.google.com/site/gson/gson-user-guide#TOC-Collections-Limitations)    
     5.6. [Serializing and Deserializing Generic Types](https://sites.google.com/site/gson/gson-user-guide#TOC-Serializing-and-Deserializing-Generic-Types)    
+    5.7. [Serializing and Deserializing Collection with Objects of Arbitrary Types](https://sites.google.com/site/gson/gson-user-guide#TOC-Serializing-and-Deserializing-Collection-with-Objects-of-Arbitrary-Types)    
 6. [Issues in Designing Gson](https://sites.google.com/site/gson/gson-user-guide#TOC-Issues-in-Designing-Gson)    
 7. [Future Enhancements to Gson](https://sites.google.com/site/gson/gson-user-guide#TOC-Future-Enhancements-to-Gson)    
