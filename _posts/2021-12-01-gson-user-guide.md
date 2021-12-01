@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Gson (Java Library)
+title: Gson User Guide
 description: Gson User Guide
 summary: Gson User Guide
 tags: 
@@ -33,5 +33,8 @@ minute: 1
         5.14.1. [Java Modifier Exclusion](https://sites.google.com/site/gson/gson-user-guide#TOC-Java-Modifier-Exclusion)    
         5.14.2. [Gson's @Expose](https://sites.google.com/site/gson/gson-user-guide#TOC-Gson-s-Expose)    
         5.14.3. [User Defined Exclusion Strategies](https://sites.google.com/site/gson/gson-user-guide#TOC-User-Defined-Exclusion-Strategies)    
+    5.15. [JSON Field Naming Support](https://sites.google.com/site/gson/gson-user-guide#TOC-JSON-Field-Naming-Support)    
+    5.16. [Sharing State Across Custom Serializers and Deserializers](https://sites.google.com/site/gson/gson-user-guide#TOC-Sharing-State-Across-Custom-Serializers-and-Deserializers)    
+    5.17. [Streaming](https://sites.google.com/site/gson/gson-user-guide#TOC-Streaming)    
 6. [Issues in Designing Gson](https://sites.google.com/site/gson/gson-user-guide#TOC-Issues-in-Designing-Gson)    
 7. [Future Enhancements to Gson](https://sites.google.com/site/gson/gson-user-guide#TOC-Future-Enhancements-to-Gson)    
