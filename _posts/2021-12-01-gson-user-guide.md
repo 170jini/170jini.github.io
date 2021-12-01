@@ -12,3 +12,5 @@ minute: 1
 4. [Gson Users](https://sites.google.com/site/gson/gson-user-guide#TOC-Gson-Users)    
 5. [Using Gson](https://sites.google.com/site/gson/gson-user-guide#TOC-Using-Gson)    
     5.1. [Primitives Examples](https://sites.google.com/site/gson/gson-user-guide#TOC-Primitives-Examples)    
+    5.2. [Object Examples](https://sites.google.com/site/gson/gson-user-guide#TOC-Object-Examples)    
+        5.2.1. [Finer Points with Objects](https://sites.google.com/site/gson/gson-user-guide#TOC-Finer-Points-with-Objects)    
