@@ -30,5 +30,8 @@ minute: 1
     5.12. [Null Object Support](https://sites.google.com/site/gson/gson-user-guide#TOC-Null-Object-Support)    
     5.13. [Versioning Support](https://sites.google.com/site/gson/gson-user-guide#TOC-Versioning-Support)    
     5.14. [Excluding Fields From Serialization and Deserialization](https://sites.google.com/site/gson/gson-user-guide#TOC-Excluding-Fields-From-Serialization-and-Deserialization)    
+        5.14.1. [Java Modifier Exclusion](https://sites.google.com/site/gson/gson-user-guide#TOC-Java-Modifier-Exclusion)    
+        5.14.2. [Gson's @Expose](https://sites.google.com/site/gson/gson-user-guide#TOC-Gson-s-Expose)    
+        5.14.3. [User Defined Exclusion Strategies](https://sites.google.com/site/gson/gson-user-guide#TOC-User-Defined-Exclusion-Strategies)    
 6. [Issues in Designing Gson](https://sites.google.com/site/gson/gson-user-guide#TOC-Issues-in-Designing-Gson)    
 7. [Future Enhancements to Gson](https://sites.google.com/site/gson/gson-user-guide#TOC-Future-Enhancements-to-Gson)    
