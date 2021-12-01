@@ -1,9 +1,11 @@
 ---
 layout: post
-title: Gson User Guide
+title: Gson (Java Library)
 description: Gson User Guide
 summary: Gson User Guide
 tags: 
 minute: 1
 ---
 1. [Overview](https://sites.google.com/site/gson/gson-user-guide#TOC-Overview)    
+2. [Goals for Gson](https://sites.google.com/site/gson/gson-user-guide#TOC-Goals-for-Gson)    
+3. [Gson Performance and Scalability](https://sites.google.com/site/gson/gson-user-guide#TOC-Gson-Performance-and-Scalability)    
