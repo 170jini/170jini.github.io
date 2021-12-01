@@ -6,4 +6,4 @@ summary: Gson User Guide
 tags: 
 minute: 1
 ---
-1. [웹문서](https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-doc)    
+1. [Overview](https://sites.google.com/site/gson/gson-user-guide#TOC-Overview)    
