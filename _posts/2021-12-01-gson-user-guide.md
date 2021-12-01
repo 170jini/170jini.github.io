@@ -14,3 +14,6 @@ minute: 1
     5.1. [Primitives Examples](https://sites.google.com/site/gson/gson-user-guide#TOC-Primitives-Examples)    
     5.2. [Object Examples](https://sites.google.com/site/gson/gson-user-guide#TOC-Object-Examples)    
         5.2.1. [Finer Points with Objects](https://sites.google.com/site/gson/gson-user-guide#TOC-Finer-Points-with-Objects)    
+    5.3. [Nested Classes (including Inner Classes)](https://sites.google.com/site/gson/gson-user-guide#TOC-Nested-Classes-including-Inner-Classes-)    
+6. [Issues in Designing Gson](https://sites.google.com/site/gson/gson-user-guide#TOC-Issues-in-Designing-Gson)    
+7. [Future Enhancements to Gson](https://sites.google.com/site/gson/gson-user-guide#TOC-Future-Enhancements-to-Gson)    
