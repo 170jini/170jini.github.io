@@ -8,5 +8,7 @@ minute: 1
 ---
 1. [주소](https://developers.kakao.com/docs/latest/ko/local/dev-guide#address-coord)    
 https://dapi.kakao.com/v2/local/search/address.json?query=전북 삼성동 100&analyze_type=similar&page=1&size=10    
-1. [좌표로 행정구역정보](https://developers.kakao.com/docs/latest/ko/local/dev-guide#coord-to-district)    
+2. [좌표로 행정구역정보](https://developers.kakao.com/docs/latest/ko/local/dev-guide#coord-to-district)    
 https://dapi.kakao.com/v2/local/geo/coord2regioncode.json?x=127.1086228&y=37.4012191&input_coord=WGS84&output_coord=WGS84
+3. [좌표로 주소](https://developers.kakao.com/docs/latest/ko/local/dev-guide#coord-to-address)    
+https://dapi.kakao.com/v2/local/geo/coord2address.json?x=127.1086228&y=37.4012191&input_coord=WGS84
