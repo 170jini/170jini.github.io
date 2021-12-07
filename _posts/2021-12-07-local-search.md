@@ -14,3 +14,5 @@ https://dapi.kakao.com/v2/local/geo/coord2regioncode.json?x=127.1086228&y=37.401
 https://dapi.kakao.com/v2/local/geo/coord2address.json?x=127.1086228&y=37.4012191&input_coord=WGS84
 4. [좌표계 변환](https://developers.kakao.com/docs/latest/ko/local/dev-guide#trans-coord)    
 https://dapi.kakao.com/v2/local/geo/transcoord.json?x=160710.37729270622&y=-4388.879299157299&input_coord=WTM&output_coord=WGS84
+4. [키워드로 장소](https://developers.kakao.com/docs/latest/ko/local/dev-guide#search-by-keyword)    
+https://dapi.kakao.com/v2/local/search/keyword.json?query=카카오프렌즈&y=37.514322572335935&x=127.06283102249932&radius=20000
