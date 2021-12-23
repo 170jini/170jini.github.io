@@ -58,7 +58,18 @@ with(person) {
     print(age)
 }
 ```
-5. run 사용 규칙    
+5. run() 함수
+익명 함수처럼 사용할 때는 블록의 결과를 반환
+```kotlin
+// fun <R> run(block: () -> R): R
+val avg = run {
+    val korean = 100
+    val english = 80
+    val math = 50
+
+    (korean + english + math) / 3.0
+}
+```    
 어떤 값을 계산할 필요가 있거나 여러개의 지역 변수의 범위를 제한하려면 run 을 사용합니다.
 매개 변수로 전달된 명시적 수신객체 를 암시적 수신 객체로 변환 할때 run ()을 사용할수 있습니다.
 ```kotlin
