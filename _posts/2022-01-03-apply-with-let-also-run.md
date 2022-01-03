@@ -46,15 +46,16 @@ println(firstAndLast)
 5. run() 함수    
 The context object is available as a receiver (this). The return value is the lambda result.    
 ```kotlin
-val hexNumberRegex = run {
-    val digits = "0-9"
-    val hexDigits = "A-Fa-f"
-    val sign = "+-"
-
-    Regex("[$sign]?[$digits$hexDigits]+")
+class Employee {
+    var firstName: String? = null
+    var age: Int = 0
 }
 
-for (match in hexNumberRegex.findAll("+123 -FFFF !%*& 88 XYZ")) {
-    println(match.value)
+val employee: Employee? = Employee()
+employee?.firstName = "Suneet"
+employee?.age = 27
+
+employee?.run {
+    println(age)
 }
 ```
