@@ -7,14 +7,13 @@ tags:
 minute: 1
 ---
 [코틀린 의 apply, with, let, also, run 은 언제 사용하는가?](https://medium.com/@limgyumin/%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%9D%98-apply-with-let-also-run-%EC%9D%80-%EC%96%B8%EC%A0%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%EA%B0%80-4a517292df29)    
-1. apply 사용 규칙    
-수신 객체 람다 내부에서 수신 객체의 함수를 사용하지 않고 수신 객체 자신을 다시 반환 하려는 경우에 apply 를 사용합니다.    
-수신 객체 의 프로퍼티 만을 사용하는 대표적인 경우가 객체의 초기화 이며, 이곳에 apply 를 사용합니다.    
+1. apply() 함수    
+블록에 객체 자신이 리시버 객체로 전달되고 이 객체가 반환    
 ```kotlin
-val peter = Person().apply {
-    // apply 의 블록 에서는 오직 프로퍼티 만 사용합니다!
-    name = "Peter"
-    age = 18
+// fun <T> T.apply(block: T.() -> Unit): T
+val result = car?.apply {
+    car.setColor(Color.RED)
+    car.setPrice(1000)
 }
 ```
 2. also 사용 규칙    
@@ -50,7 +49,7 @@ getPersonDao().let { dao ->
 }
 ```
 4. with() 함수    
-인수로 객체를 받고 블록에 리시버 객체로 전달하고 수행된 결과를 반환
+인수로 객체를 받고 블록에 리시버 객체로 전달하고 수행된 결과를 반환    
 ```kotlin
 // fun <T, R> with(receiver: T, block T.() -> R): R
 with(str) {
@@ -58,7 +57,7 @@ with(str) {
 }
 ```
 5. run() 함수    
-익명 함수처럼 사용할 때는 블록의 결과를 반환
+익명 함수처럼 사용할 때는 블록의 결과를 반환    
 ```kotlin
 // fun <R> run(block: () -> R): R
 val avg = run {
