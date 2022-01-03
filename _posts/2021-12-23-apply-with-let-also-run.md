@@ -49,16 +49,15 @@ getPersonDao().let { dao ->
     dao.insert(person)
 }
 ```
-4. with 사용 규칙    
-Non-nullable (Null 이 될수 없는) 수신 객체 이고 결과가 필요하지 않은 경우에만 with 를 사용합니다.
+4. with() 함수    
+인수로 객체를 받고 블록에 리시버 객체로 전달하고 수행된 결과를 반환
 ```kotlin
-val person: Person = getPerson()
-with(person) {
-    print(name)
-    print(age)
+// fun <T, R> with(receiver: T, block T.() -> R): R
+with(str) {
+    println(toUpperCase())
 }
 ```
-5. run() 함수
+5. run() 함수    
 익명 함수처럼 사용할 때는 블록의 결과를 반환
 ```kotlin
 // fun <R> run(block: () -> R): R
