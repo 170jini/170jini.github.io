@@ -50,11 +50,9 @@ class Employee {
     var firstName: String? = null
     var age: Int = 0
 }
-
 val employee: Employee? = Employee()
 employee?.firstName = "Suneet"
 employee?.age = 27
-
 employee?.run {
     println(age)
 }
