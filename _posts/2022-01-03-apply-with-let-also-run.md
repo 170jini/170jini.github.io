@@ -37,13 +37,6 @@ val result = str?.let { // Int
 A non-extension function: the context object is passed as an argument, but inside the lambda, it's available as a receiver (this). The return value is the lambda result.    
 ```kotlin
 val numbers = mutableListOf("one", "two", "three")
-with(numbers) {
-    println("'with' is called with argument $this")
-    println("It contains $size elements")
-}
-```
-```kotlin
-val numbers = mutableListOf("one", "two", "three")
 val firstAndLast = with(numbers) {
     "The first element is ${first()}," +
     " the last element is ${last()}"
@@ -58,18 +51,5 @@ val service = MultiportService("https://example.kotlinlang.org", 80)
 val result = service.run {
     port = 8080
     query(prepareRequest() + " to port $port")
-}
-```    
-```kotlin
-val hexNumberRegex = run {
-    val digits = "0-9"
-    val hexDigits = "A-Fa-f"
-    val sign = "+-"
-
-    Regex("[$sign]?[$digits$hexDigits]+")
-}
-
-for (match in hexNumberRegex.findAll("+123 -FFFF !%*& 88 XYZ")) {
-    println(match.value)
 }
 ```
