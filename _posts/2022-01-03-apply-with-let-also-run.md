@@ -6,7 +6,7 @@ summary: 코틀린의 apply, with, let, also, run
 tags: 
 minute: 1
 ---
-[Coding conventions](https://kotlinlang.org/docs/coding-conventions.html)    
+[Scope functions](https://kotlinlang.org/docs/scope-functions.html)    
 1. apply() 함수    
 블록에 객체 자신이 리시버 객체로 전달되고 이 객체가 반환    
 ```kotlin
@@ -17,17 +17,13 @@ val result = car?.apply {
 }
 ```
 2. also() 함수    
-수신 객체 람다가 전달된 수신 객체를 전혀 사용 하지 않거나 수신 객체의 속성을 변경하지 않고 사용하는 경우 also 를 사용합니다.    
-also 는 apply 와 마찬가지로 수신 객체를 반환 하므로 블록 함수가 다른 값을 반환 해야하는 경우에는 also 를 사용할수 없습니다.    
-예를 들자면, 객체의 사이드 이팩트를 확인하거나 수신 객체의 프로퍼티에 데이터를 할당하기 전에 해당 데이터의 유효성을 검사 할 때 매우 유용합니다.    
+블록에 자기 자신을 인수로 전달되고 이 객체가 반환
 ```kotlin
 // fun <T> T.also(block: (T) -> Unit): T
-class Book(author: Person) {
-    val author = author.also {
-      requireNotNull(it.age)
-      print(it.name)
-    }
-}
+val numbers = mutableListOf("one", "two", "three")
+numbers
+    .also { println("The list elements before adding new one: $it") }
+    .add("four")
 ```
 3. let() 함수    
 블록에 자기 자신을 인수로 전달하고 수행된 결과를 반환    
