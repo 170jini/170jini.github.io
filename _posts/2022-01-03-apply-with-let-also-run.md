@@ -10,7 +10,6 @@ minute: 1
 1. apply() 함수    
 The context object is available as a receiver (this). The return value is the object itself.    
 ```kotlin
-// fun <T> T.apply(block: T.() -> Unit): T
 val result = car?.apply {
     car.setColor(Color.RED)
     car.setPrice(1000)
@@ -19,7 +18,6 @@ val result = car?.apply {
 2. also() 함수    
 The context object is available as an argument (it). The return value is the object itself.    
 ```kotlin
-// fun <T> T.also(block: (T) -> Unit): T
 val numbers = mutableListOf("one", "two", "three")
 numbers
     .also { println("The list elements before adding new one: $it") }
@@ -28,7 +26,6 @@ numbers
 3. let() 함수    
 The context object is available as an argument (it). The return value is the lambda result.    
 ```kotlin
-// fun <T, R> T.let(block: (T) -> R): R
 val result = str?.let { // Int
     Integer.parseInt(it)
 }
