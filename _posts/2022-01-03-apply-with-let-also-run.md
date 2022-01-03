@@ -21,6 +21,7 @@ val result = car?.apply {
 also 는 apply 와 마찬가지로 수신 객체를 반환 하므로 블록 함수가 다른 값을 반환 해야하는 경우에는 also 를 사용할수 없습니다.    
 예를 들자면, 객체의 사이드 이팩트를 확인하거나 수신 객체의 프로퍼티에 데이터를 할당하기 전에 해당 데이터의 유효성을 검사 할 때 매우 유용합니다.    
 ```kotlin
+// fun <T> T.also(block: (T) -> Unit): T
 class Book(author: Person) {
     val author = author.also {
       requireNotNull(it.age)
