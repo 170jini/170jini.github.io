@@ -8,7 +8,7 @@ minute: 1
 ---
 [Scope functions](https://kotlinlang.org/docs/scope-functions.html)    
 1. apply() 함수    
-블록에 객체 자신이 리시버 객체로 전달되고 이 객체가 반환    
+The context object is available as a receiver (this). The return value is the object itself.    
 ```kotlin
 // fun <T> T.apply(block: T.() -> Unit): T
 val result = car?.apply {
@@ -17,7 +17,7 @@ val result = car?.apply {
 }
 ```
 2. also() 함수    
-블록에 자기 자신을 인수로 전달되고 이 객체가 반환
+The context object is available as an argument (it). The return value is the object itself.    
 ```kotlin
 // fun <T> T.also(block: (T) -> Unit): T
 val numbers = mutableListOf("one", "two", "three")
@@ -26,7 +26,7 @@ numbers
     .add("four")
 ```
 3. let() 함수    
-블록에 자기 자신을 인수로 전달하고 수행된 결과를 반환    
+The context object is available as an argument (it). The return value is the lambda result.    
 ```kotlin
 // fun <T, R> T.let(block: (T) -> R): R
 val result = str?.let { // Int
@@ -34,29 +34,35 @@ val result = str?.let { // Int
 }
 ```
 4. with() 함수    
-인수로 객체를 받고 블록에 리시버 객체로 전달하고 수행된 결과를 반환    
+A non-extension function: the context object is passed as an argument, but inside the lambda, it's available as a receiver (this). The return value is the lambda result.    
 ```kotlin
-// fun <T, R> with(receiver: T, block T.() -> R): R
-with(str) {
-    println(toUpperCase())
+val numbers = mutableListOf("one", "two", "three")
+val firstAndLast = with(numbers) {
+    "The first element is ${first()}," +
+    " the last element is ${last()}"
 }
+println(firstAndLast)
 ```
 5. run() 함수    
-익명 함수처럼 사용할 때는 블록의 결과를 반환    
+The context object is available as a receiver (this). The return value is the lambda result.    
 ```kotlin
-// fun <R> run(block: () -> R): R
-val avg = run {
-    val korean = 100
-    val english = 80
-    val math = 50
+val service = MultiportService("https://example.kotlinlang.org", 80)
 
-    (korean + english + math) / 3.0
+val result = service.run {
+    port = 8080
+    query(prepareRequest() + " to port $port")
 }
 ```    
-객체를 블록의 리시버 객체로 전달하고 블록의 결과를 반환    
 ```kotlin
-// fun <T, R> T.run(block: T.() -> R): R
-str?.run {
-    println(toUpperCase())
+val hexNumberRegex = run {
+    val digits = "0-9"
+    val hexDigits = "A-Fa-f"
+    val sign = "+-"
+
+    Regex("[$sign]?[$digits$hexDigits]+")
+}
+
+for (match in hexNumberRegex.findAll("+123 -FFFF !%*& 88 XYZ")) {
+    println(match.value)
 }
 ```
