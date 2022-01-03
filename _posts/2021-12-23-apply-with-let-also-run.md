@@ -28,24 +28,12 @@ class Book(author: Person) {
     }
 }
 ```
-3. let 사용 규칙    
-다음과 같은 경우에 let 을 사용합니다.
-* 지정된 값이 null 이 아닌 경우에 코드를 실행해야 하는 경우.
-* Nullable 객체를 다른 Nullable 객체로 변환하는 경우.
-* 단일 지역 변수의 범위를 제한 하는 경우.
+3. let() 함수    
+블록에 자기 자신을 인수로 전달하고 수행된 결과를 반환    
 ```kotlin
-getNullablePerson()?.let {
-    // null 이 아닐때만 실행됩니다.
-    promote(it)
-}
-val driversLicence: Licence? = getNullablePerson()?.let {
-    // nullable personal객체를 nullable driversLicence 객체로 변경합니다.
-    licenceService.getDriversLicence(it) 
-}
-val person: Person = getPerson()
-getPersonDao().let { dao -> 
-    // 변수 dao 의 범위는 이 블록 안 으로 제한 됩니다.
-    dao.insert(person)
+// fun <T, R> T.let(block: (T) -> R): R
+val result = str?.let { // Int
+    Integer.parseInt(it)
 }
 ```
 4. with() 함수    
@@ -68,7 +56,7 @@ val avg = run {
     (korean + english + math) / 3.0
 }
 ```    
-객체를 블록의 리시버 객체로 전달하고 블록의 결과를 반환
+객체를 블록의 리시버 객체로 전달하고 블록의 결과를 반환    
 ```kotlin
 // fun <T, R> T.run(block: T.() -> R): R
 str?.run {
