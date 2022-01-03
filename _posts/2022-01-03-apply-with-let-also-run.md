@@ -46,10 +46,15 @@ println(firstAndLast)
 5. run() 함수    
 The context object is available as a receiver (this). The return value is the lambda result.    
 ```kotlin
-val service = MultiportService("https://example.kotlinlang.org", 80)
+val hexNumberRegex = run {
+    val digits = "0-9"
+    val hexDigits = "A-Fa-f"
+    val sign = "+-"
 
-val result = service.run {
-    port = 8080
-    query(prepareRequest() + " to port $port")
+    Regex("[$sign]?[$digits$hexDigits]+")
+}
+
+for (match in hexNumberRegex.findAll("+123 -FFFF !%*& 88 XYZ")) {
+    println(match.value)
 }
 ```
