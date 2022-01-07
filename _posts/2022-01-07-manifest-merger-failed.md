@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Manifest merger failed 병합 에러
-description: Manifest merger failed 병합 에러
-summary: Manifest merger failed 병합 에러
+title: Manifest Merging Errors
+description: Manifest Merging Errors
+summary: Manifest Merging Errors
 tags: 
 minute: 1
 ---
-* [Manifest merger failed 병합 에러](https://wonpaper.tistory.com/132)
+* [Manifest Merging Errors](https://wonpaper.tistory.com/132)
