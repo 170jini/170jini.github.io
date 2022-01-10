@@ -12,3 +12,4 @@ minute: 1
 * [좌표 객체](https://navermaps.github.io/android-map-sdk/guide-ko/2-2.html)
 * [지도 옵션](https://navermaps.github.io/android-map-sdk/guide-ko/2-3.html)
 * [카메라와 투영](https://navermaps.github.io/android-map-sdk/guide-ko/3-1.html)
+* [카메라 이동](https://navermaps.github.io/android-map-sdk/guide-ko/3-2.html)
