@@ -20,3 +20,5 @@ minute: 1
 * [정보 창](https://navermaps.github.io/android-map-sdk/guide-ko/5-3.html)
 * [셰이프](https://navermaps.github.io/android-map-sdk/guide-ko/5-4.html)
 * [위치 오버레이](https://navermaps.github.io/android-map-sdk/guide-ko/5-5.html)
+* [지상 오버레이](https://navermaps.github.io/android-map-sdk/guide-ko/5-6.html)
+* [경로선과 화살표](https://navermaps.github.io/android-map-sdk/guide-ko/5-7.html)
