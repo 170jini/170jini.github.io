@@ -17,3 +17,4 @@ minute: 1
 * [위치](https://navermaps.github.io/android-map-sdk/guide-ko/4-2.html)
 * [오버레이 공통](https://navermaps.github.io/android-map-sdk/guide-ko/5-1.html)
 * [마커](https://navermaps.github.io/android-map-sdk/guide-ko/5-2.html)
+* [정보 창](https://navermaps.github.io/android-map-sdk/guide-ko/5-3.html)
