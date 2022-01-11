@@ -19,3 +19,4 @@ minute: 1
 * [마커](https://navermaps.github.io/android-map-sdk/guide-ko/5-2.html)
 * [정보 창](https://navermaps.github.io/android-map-sdk/guide-ko/5-3.html)
 * [셰이프](https://navermaps.github.io/android-map-sdk/guide-ko/5-4.html)
+* [위치 오버레이](https://navermaps.github.io/android-map-sdk/guide-ko/5-5.html)
