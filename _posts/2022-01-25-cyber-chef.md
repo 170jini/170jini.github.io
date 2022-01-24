@@ -6,4 +6,5 @@ summary: Cyber Chef
 tags: 
 minute: 1
 ---
-* [Cyber Chef](https://github.com/gchq/CyberChef/releases)
+* [Cyber Chef](https://icyberchef.com/)
+* [Local Cyber Chef](https://github.com/gchq/CyberChef/releases)
