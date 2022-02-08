@@ -7,3 +7,4 @@ tags:
 minute: 1
 ---
 * [Android Custom Dialog](https://greedy0110.tistory.com/70)
+* [Android Custom Dialog](https://overoid.tistory.com/29)
