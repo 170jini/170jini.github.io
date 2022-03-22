@@ -1,8 +1,8 @@
 ---
 layout: post
-title: C++ switch 문에서 문자열 사용하기 (Feat. constexpr)
-description: C++ switch 문에서 문자열 사용하기
-summary: C++ switch 문에서 문자열 사용하기
+title: switch 문에서 문자열 사용하기
+description: switch 문에서 문자열 사용하기
+summary: switch 문에서 문자열 사용하기
 tags: 
 minute: 1
 ---
