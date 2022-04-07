@@ -1,9 +1,9 @@
 ---
 layout: post
-title: JobScheduler
-description: JobScheduler
-summary: JobScheduler
+title: Job Scheduler
+description: Job Scheduler
+summary: Job Scheduler
 tags: 
 minute: 1
 ---
-* [JobScheduler](https://github.com/codechacha/JobScheduler)
+* [Job Scheduler](https://github.com/codechacha/JobScheduler)
