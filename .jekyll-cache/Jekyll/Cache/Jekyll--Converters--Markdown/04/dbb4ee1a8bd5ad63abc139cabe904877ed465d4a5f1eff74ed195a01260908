@@ -1,0 +1,51 @@
+I"f<p><a href="https://kotlinlang.org/docs/scope-functions.html">Scope functions</a></p>
+<ol>
+  <li>apply() 함수  <br />
+The context object is available as a receiver (this). The return value is the object itself.
+    <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">result</span> <span class="p">=</span> <span class="n">car</span><span class="o">?.</span><span class="nf">apply</span> <span class="p">{</span>
+ <span class="n">car</span><span class="p">.</span><span class="nf">setColor</span><span class="p">(</span><span class="nc">Color</span><span class="p">.</span><span class="nc">RED</span><span class="p">)</span>
+ <span class="n">car</span><span class="p">.</span><span class="nf">setPrice</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>also() 함수  <br />
+The context object is available as an argument (it). The return value is the object itself.
+    <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">numbers</span> <span class="p">=</span> <span class="nf">mutableListOf</span><span class="p">(</span><span class="s">"one"</span><span class="p">,</span> <span class="s">"two"</span><span class="p">,</span> <span class="s">"three"</span><span class="p">)</span>
+<span class="n">numbers</span>
+ <span class="p">.</span><span class="nf">also</span> <span class="p">{</span> <span class="nf">println</span><span class="p">(</span><span class="s">"The list elements before adding new one: $it"</span><span class="p">)</span> <span class="p">}</span>
+ <span class="p">.</span><span class="nf">add</span><span class="p">(</span><span class="s">"four"</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>let() 함수  <br />
+The context object is available as an argument (it). The return value is the lambda result.
+    <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">result</span> <span class="p">=</span> <span class="n">str</span><span class="o">?.</span><span class="nf">let</span> <span class="p">{</span> <span class="c1">// Int</span>
+ <span class="nc">Integer</span><span class="p">.</span><span class="nf">parseInt</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>with() 함수  <br />
+A non-extension function: the context object is passed as an argument, but inside the lambda, it’s available as a receiver (this). The return value is the lambda result.
+    <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">numbers</span> <span class="p">=</span> <span class="nf">mutableListOf</span><span class="p">(</span><span class="s">"one"</span><span class="p">,</span> <span class="s">"two"</span><span class="p">,</span> <span class="s">"three"</span><span class="p">)</span>
+<span class="kd">val</span> <span class="py">firstAndLast</span> <span class="p">=</span> <span class="nf">with</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="p">{</span>
+ <span class="s">"The first element is ${first()},"</span> <span class="p">+</span>
+ <span class="s">" the last element is ${last()}"</span>
+<span class="p">}</span>
+<span class="nf">println</span><span class="p">(</span><span class="n">firstAndLast</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>run() 함수  <br />
+The context object is available as a receiver (this). The return value is the lambda result.
+    <div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Employee</span> <span class="p">{</span>
+ <span class="kd">var</span> <span class="py">firstName</span><span class="p">:</span> <span class="nc">String</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
+ <span class="kd">var</span> <span class="py">age</span><span class="p">:</span> <span class="nc">Int</span> <span class="p">=</span> <span class="mi">0</span>
+<span class="p">}</span>
+<span class="kd">val</span> <span class="py">employee</span><span class="p">:</span> <span class="nc">Employee</span><span class="p">?</span> <span class="p">=</span> <span class="nc">Employee</span><span class="p">()</span>
+<span class="n">employee</span><span class="o">?.</span><span class="n">firstName</span> <span class="p">=</span> <span class="s">"Suneet"</span>
+<span class="n">employee</span><span class="o">?.</span><span class="n">age</span> <span class="p">=</span> <span class="mi">27</span>
+<span class="n">employee</span><span class="o">?.</span><span class="nf">run</span> <span class="p">{</span>
+ <span class="nf">println</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+:ET
