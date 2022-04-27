@@ -1,0 +1,18 @@
+I"}<ul>
+  <li><a href="https://github.com/tensorflow/examples">tensorflow lite android example github</a></li>
+</ul>
+
+<p>아래로 설정 후 빌드됨.</p>
+
+<p>File-&gt;Project Structure-&gt;Project-Android Gradle Plugin Version: 4.2.2</p>
+
+<p>File-&gt;Project Structure-&gt;Project-Gradle Version: 6.7.1</p>
+
+<p>File-&gt;Project Structure-&gt;Module-Compile Sdk Version: 30</p>
+
+<p>File-&gt;Project Structure-&gt;Module-Build Tools Version: 30.0.3</p>
+
+<p>File-&gt;Project Structure-&gt;Module-Source Compatibility: $JavaVersion.VERSION_1_8</p>
+
+<p>File-&gt;Project Structure-&gt;Module-Target Compatibility: $JavaVersion.VERSION_1_8</p>
+:ET

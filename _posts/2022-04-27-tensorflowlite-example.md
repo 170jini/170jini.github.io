@@ -1,8 +1,8 @@
 ---
 layout: post
-title: tensorflow lite android example github
-description: tensorflow lite android example github
-summary: tensorflow lite android example github
+title: Tensorflow Lite Android Example Github
+description: Tensorflow Lite Android Example Github
+summary: Tensorflow Lite Android Example Github
 tags: 
 minute: 1
 ---
