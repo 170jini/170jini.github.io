@@ -6,7 +6,7 @@ summary: Tensorflow Example
 tags: 
 minute: 1
 ---
-{{ "{% highlight python " }}%}  
+```python
 import tensorflow as tf
 import numpy as np
 import matplotlib
@@ -38,4 +38,4 @@ for x, y in zip(x_data, y_data):
 plt.plot(w_trace, label='weight')
 plt.plot(b_trace, label='bias')
 plt.show()
-{{ "{% endhighlight " }}%}  
+```
