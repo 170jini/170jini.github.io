@@ -42,7 +42,7 @@ fun main() {
 }
 ```
 3. Job 객체의 반환 - CoroutinesReturn.kt    
-``kotlin
+```kotlin
 import kotlinx.coroutines.*
 fun main() {
     val job = GlobalScope.launch { // Job 객체의 반환
@@ -53,5 +53,73 @@ fun main() {
     println("job.isActive: ${job.isActive}, completed: ${job.isCompleted}")
     Thread.sleep(2000L)
     println("job.isActive: ${job.isActive}, completed: ${job.isCompleted}")
+}
+```
+4. join() 결과 기다리기    
+```kotlin
+fun main() = runBlocking<Unit> {
+    val job = launch { // Job의 객체를 반환
+        delay(1000L)
+        println("World!")
+    }
+    println("Hello")
+    job.join() // 명시적으로 코루틴이 완료되길 기다림. 취소할 경우 job.cancel()을 사용
+}
+```
+5. 동시성 처리를 위한 async 코루틴    
+```kotlin
+suspend fun doWork1(): String {
+    delay(1000)
+    return "Work1"
+}
+suspend fun doWork2(): String {
+    delay(3000)
+    return "Work2"
+}
+private fun worksInParallel() : Job {
+    // Deferred<T> 를 통해 결과값을 반환
+    val one = GlobalScope.async {
+        doWork1()
+    }
+    val two = GlobalScope.async {
+        doWork2()
+    }
+    val job = GlobalScope.launch {
+        val combined = one.await() + "_" + two.await()
+        println("Kotlin Combined: $combined")
+    }
+    return job
+}
+fun main() = runBlocking<Unit> {
+    runBlocking<Unit> {
+        val time = measureTimeMillis {
+            val job = worksInParallel()
+            job.join()
+        }
+        println("Time: $time")
+    }
+}
+```
+6. 부모-자식 및 독립적인 스코프의 코루틴    
+```kotlin
+fun main() = runBlocking<Unit> {
+    val request = launch {
+        GlobalScope.launch { // 프로그램 전역으로 독립적인 수행 (부모-자식관계 없음)
+            println("job1: before suspend function")
+            delay(1000)
+            println("job1: after suspend function") // 작업 취소에 영향을 받지 않음
+        }
+        launch { // 부모의 문맥을 상속 (상위 launch의 자식)
+        //launch(Dispatchers.Default) { // 부모의 문맥을 상속 (상위 launch의 자식), 분리된 작업
+        //CoroutineScope(Dispatchers.Default).launch { // 새로운 스코프가 구성되 request와 무관
+            delay(100)
+            println("job2: before suspend function")
+            delay(1000)
+            println("job2: after suspend function") // request(부모)가 취소되면 수행되지 않음
+        }
+    }
+    delay(500)
+    request.cancel() // 부모 코루틴의 취소
+    delay(1000)
 }
 ```
