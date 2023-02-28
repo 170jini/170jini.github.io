@@ -123,3 +123,53 @@ fun main() = runBlocking<Unit> {
     delay(1000)
 }
 ```
+7. main()을 블로킹 모드로 동작시키기 - RunBlockingTest.kt    
+```kotlin
+import kotlinx.coroutines.*
+fun main() = runBlocking<Unit> { // 메인 메서드가 코루틴 환경에서 실행
+    launch { // 백그라운드로 코루틴 실행
+        delay(1000L)
+        println("World!")
+    }
+    println("Hello") // 즉시 이어서 실행됨
+}
+```
+8. runBlocking()을 클래스 내의 멤버 메서드에서 사용할 때    
+```kotlin
+class MyTest {
+    ...
+    fun mySuspendMethod() = runBlocking<Unit> {
+}
+```
+9. 특정 디스패처 옵션을 주어줄 때    
+```kotlin
+runBlocking(Dispatchers.IO) {
+    launch {
+        repeat(5) {
+            println("counting ${it + 1}")
+            delay(1000)
+        }
+    }
+}
+...
+```
+10. coroutineScope 빌더의 예    
+```kotlin
+import kotlinx.coroutines.*
+fun main() = runBlocking { // this: CoroutineScope
+    launch {
+        delay(200L)
+        println("Task from runBlocking")
+    }
+    coroutineScope { // 코루틴 스코프의 생성 -- 부모가 하위 코루틴 완료 기다림
+    //CoroutineScope(Dispatchers.Default).launch {//--이때는 부모-자식 관계와 무관(완료를 기다리지 않음)
+        launch {
+            delay(500L)
+            println("Task from nested launch")
+        }
+        delay(100L)
+        println("Task from coroutine scope")
+    }
+    println("Coroutine scope is over")
+}
+```
