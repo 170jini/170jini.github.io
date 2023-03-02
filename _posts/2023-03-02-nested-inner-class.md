@@ -27,6 +27,7 @@ fun main() {
 }
 ```
 2. 코틀린 중첩 클래스에서 바깥 클래스 접근    
+```kotlin
 // 1 Thread클래스를 상속받아 구현하기
 class Outer {
     class Nested {
@@ -40,5 +41,18 @@ class Outer {
         const val country = "Korea"
         fun getSomething() = println("Get something...")
     }
+}
+```
+3. 이너 클래스의 바깥 클래스의 멤버 접근    
+```kotlin
+class Smartphone(val model: String) {
+    private val cpu = "Exynos"
+    inner class ExternalStorage(val size: Int) {
+        fun getInfo() = "${model}: Installed on $cpu with ${size}Gb" // 바깥 클래스의 프로퍼티 접근
+    }
+}
+fun main() {
+    val mySdcard = Smartphone("S7").ExternalStorage(32)
+    println(mySdcard.getInfo())
 }
 ```
