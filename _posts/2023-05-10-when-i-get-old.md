@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 청하, Christopher - When I Get Old
-description: 청하, Christopher - When I Get Old
-summary: 청하, Christopher - When I Get Old
+title: When I Get Old
+description: When I Get Old
+summary: When I Get Old
 tags: 
 minute: 1
 ---
