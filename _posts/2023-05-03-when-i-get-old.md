@@ -6,7 +6,7 @@ summary: When I Get Old
 tags: 
 minute: 1
 ---
-- Intro:Christopher
+### Intro:Christopher
 
 Oh When i get old
 
@@ -30,7 +30,7 @@ Seem so far away
 
 ​
 
-- Verse 1 : Christopher
+### Verse 1 : Christopher
 
 Long dress, No shoes 
 
@@ -74,7 +74,7 @@ That's probably all I ever do
 
 ​
 
-- Chorus : Christopher
+### Chorus : Christopher
 
 Oh When i get old
 
@@ -118,7 +118,7 @@ Seem so far away
 
 ​
 
-- Verse 2 : 청하(CHUNG HA)
+### Verse 2 : 청하(CHUNG HA)
 
 Wake up and smile 
 
@@ -166,7 +166,7 @@ At least these memories never say goodbye
 
 ​
 
-- Chorus : 청하(CHUNG HA) & Christopher
+### Chorus : 청하(CHUNG HA) & Christopher
 
 Oh When i get old 
 
@@ -210,7 +210,7 @@ Seem so far away
 
 ​
 
-- Bridge : Christopher, 청하(CHUNG HA), 청하(CHUNG HA) & Christopher
+### Bridge : Christopher, 청하(CHUNG HA), 청하(CHUNG HA) & Christopher
 
 Someday im running out of time 
 
@@ -226,7 +226,7 @@ I'll keep our love frozen in time
 
 ​
 
-- Chorus : 청하(CHUNG HA) & Christopher
+### Chorus : 청하(CHUNG HA) & Christopher
 
 Oh When i get old 
 
