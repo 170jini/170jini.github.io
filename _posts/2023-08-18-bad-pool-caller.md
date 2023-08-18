@@ -7,8 +7,8 @@ tags:
 minute: 1
 ---
 윈도우키 + x 눌러서 Windows PowerShell(관리자) 실행    
-C:\>Dism /online /cleanup-image /restorehealth    
-C:\>sfc /scannow    
+C:\\>Dism /online /cleanup-image /restorehealth    
+C:\\>sfc /scannow    
 
 DISM /Online /Cleanup-Image /RestoreHealth 명령은 Windows 운영 체제의 이미지를 복구하여 손상된 파일을 원래의 상태로 복원하는 역할을 합니다. 이 명령은 시스템 이미지를 검사하고, 문제가 있는 경우 해당 문제를 자동으로 해결하려고 시도합니다. 주로 시스템의 안정성을 유지하거나 문제를 해결하는 데 사용됩니다.    
 
