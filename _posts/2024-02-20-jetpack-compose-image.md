@@ -15,11 +15,15 @@ Image(
 ```
     
 AndroidMenifest.xml
+```xml
 <uses-permission android:name="android.permission.INTERNET"/>
-
+```
+    
 build.gradle
+```
 implementation("io.coil-kt:coil-compose:2.4.0")
-
+```
+    
 ```kotlin
 AsyncImage(
     model = "https://images.pexels.com/photos/20179666/pexels-photo-20179666.jpeg",
