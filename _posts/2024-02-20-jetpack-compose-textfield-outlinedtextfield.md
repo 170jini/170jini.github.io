@@ -6,6 +6,7 @@ summary: Jetpack Compose - TextField / OutlinedTextField
 tags: 
 minute: 1
 ---
+TextField
 ```kotlin
 var textState by remember { mutableStateOf("") }
 
@@ -19,7 +20,7 @@ TextField(
     }
 )
 ```
-    
+OutlinedTextField
 ```kotlin
 var textState by remember { mutableStateOf("") }
 
