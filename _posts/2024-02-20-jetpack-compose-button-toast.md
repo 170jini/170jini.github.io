@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Jetpack Compose - Button & Toast
-description: Jetpack Compose - Button & Toast
-summary: Jetpack Compose  - Button & Toast
+title: Jetpack Compose - Button / Toast
+description: Jetpack Compose - Button / Toast
+summary: Jetpack Compose  - Button / Toast
 tags: 
 minute: 1
 ---
