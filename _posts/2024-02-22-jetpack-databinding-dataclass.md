@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Jetpack - DataBinding
-description: Jetpack - DataBinding
-summary: Jetpack - DataBinding
+title: Jetpack - DataBinding + DataClass
+description: Jetpack - DataBinding + DataClass
+summary: Jetpack - DataBinding + DataClass
 tags: 
 minute: 1
 ---
