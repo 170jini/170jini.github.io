@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Jetpack Compose - Show / Hide
-description: Jetpack Compose - Show / Hide
-summary: Jetpack Compose - Show / Hide
+title: Jetpack Compose - Navigation
+description: Jetpack Compose - Navigation
+summary: Jetpack Compose - Navigation
 tags: 
 minute: 1
 ---
