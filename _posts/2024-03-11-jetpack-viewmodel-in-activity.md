@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Jetpack Compose - Activity에서 ViewModel 사용
-description: Jetpack Compose - Activity에서 ViewModel 사용
-summary: Jetpack Compose - Activity에서 ViewModel 사용
+title: Jetpack - Activity에서 ViewModel 사용
+description: Jetpack - Activity에서 ViewModel 사용
+summary: Jetpack - Activity에서 ViewModel 사용
 tags: 
 minute: 1
 ---
