@@ -50,6 +50,11 @@ class BlankFragment1 : Fragment() {
 
     private val TAG = "BlankFragment1"
 
+    private var _binding: FragmentBlank1Binding? = null
+    private val binding get() = _binding!!
+
+    private lateinit var viewModel: BlankViewModel1
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate")
@@ -59,8 +64,22 @@ class BlankFragment1 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.d(TAG, "onCreateView")
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank1, container, false)
+        _binding = FragmentBlank1Binding.inflate(inflater, container, false)
+        val view = binding.root
+        viewModel = ViewModelProvider(this).get(BlankViewModel1::class.java)
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.btn1.setOnClickListener {
+            viewModel.plusCountValue()
+        }
+        viewModel.liveCount.observe(viewLifecycleOwner, Observer {
+            binding.text1.text = it.toString()
+        })
     }
 
     override fun onDestroyView() {
@@ -89,6 +108,7 @@ class BlankFragment2 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.d(TAG, "onCreateView")
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_blank2, container, false)
     }
@@ -101,6 +121,17 @@ class BlankFragment2 : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         Log.d(TAG, "onDestroy")
+    }
+}
+```
+BlankViewModel1.kt
+```kotlin
+class BlankViewModel1 : ViewModel() {
+    private var _mutableCount = MutableLiveData(0)
+    val liveCount: LiveData<Int>
+        get() = _mutableCount
+    fun plusCountValue() {
+        _mutableCount.value = _mutableCount.value?.plus(1)
     }
 }
 ```
@@ -153,11 +184,31 @@ fragment_blank1.xml
     tools:context=".BlankFragment1">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:textSize="60sp"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Frag1" />
+        android:orientation="vertical">
+
+        <TextView
+            android:textSize="60sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Frag1" />
+
+        <TextView
+            android:id="@+id/text1"
+            android:text="0"
+            android:textSize="60sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btn1"
+            android:text="btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
 </FrameLayout>
 ```
