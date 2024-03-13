@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Jetpack - LiveData에 대한 개요
-description: Jetpack - LiveData에 대한 개요
-summary: Jetpack - LiveData에 대한 개요
+title: Jetpack - ViewModel과 LiveData 함께 써보기
+description: Jetpack - ViewModel과 LiveData 함께 써보기
+summary: Jetpack - ViewModel과 LiveData 함께 써보기
 tags: 
 minute: 1
 ---
