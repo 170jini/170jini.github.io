@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Jetpack - Map / SwitchMap
-description: Jetpack - Map / SwitchMap
-summary: Jetpack - Map / SwitchMap
+title: Jetpack - ViewModel / LiveData / LifeCycleOwner
+description: Jetpack - ViewModel / LiveData / LifeCycleOwner
+summary: Jetpack - ViewModel / LiveData / LifeCycleOwner
 tags: 
 minute: 1
 ---
