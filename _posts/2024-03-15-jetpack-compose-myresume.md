@@ -7,6 +7,20 @@ tags:
 minute: 1
 ---
 ```kotlin
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun MyResume() {
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text(text = "Android Dev Resume") }
+            )
+        }
+    ) {
+        MyResumeContent(it)
+    }
+}
+
 @Composable
 fun MyResumeContent(paddingValues: PaddingValues) {
     val context = LocalContext.current
