@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Jetpack Compose - 달력 앱 만들기
-description: Jetpack Compose - 달력 앱 만들기
-summary: Jetpack Compose - 달력 앱 만들기
+title: Jetpack Compose - 달력 앱 1
+description: Jetpack Compose - 달력 앱 1
+summary: Jetpack Compose - 달력 앱 1
 tags: 
 minute: 1
 ---
