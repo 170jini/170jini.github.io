@@ -7,6 +7,7 @@ tags:
 minute: 1
 ---
 [Link](https://medium.com/androiddevelopers/room-flow-273acffe5b57)
+
 Coroutines support in Room has been increasing at every release: Room 2.1 added coroutines support for one-shot read / write operations and with Room 2.2 we now have support for observable reads with Flow enabling you to get notified of changes in your database.
 
 #### Flow in action
