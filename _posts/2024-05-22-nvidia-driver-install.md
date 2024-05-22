@@ -1,8 +1,8 @@
 ---
 layout: post
-title: [Linux] NVIDIA driver 설치
-description: [Linux] NVIDIA driver 설치
-summary: [Linux] NVIDIA driver 설치
+title: Linux - NVIDIA driver 설치
+description: Linux - NVIDIA driver 설치
+summary: Linux - NVIDIA driver 설치
 tags: 
 minute: 1
 ---
