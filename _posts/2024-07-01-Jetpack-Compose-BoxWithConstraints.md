@@ -16,3 +16,29 @@ The BoxWithConstraints composable is a layout composable that provides access to
 __*How to Use the BoxWithConstraints Composable*__    
 To use the BoxWithConstraints composable, follow these steps:    
 
+1. Add the BoxWithConstraints composable as the root element of your layout.    
+2. Use the constraints parameter to access the constraints of the parent layout.    
+3. Adjust the layout of your composable based on the available space.    
+
+Here’s an example:    
+```kotlin
+@Composable
+fun MyComposable(modifier: Modifier = Modifier) {
+    BoxWithConstraints(
+        modifier = modifier
+    ) {
+        // Use the constraints parameter to access the parent layout constraints
+        if (maxWidth < 600.dp) {
+            // Adjust the layout for smaller screens
+            Column {
+                // Add your UI elements here
+            }
+        } else {
+            // Adjust the layout for larger screens
+            Row {
+                // Add your UI elements here
+            }
+        }
+    }
+}
+```
