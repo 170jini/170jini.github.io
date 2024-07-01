@@ -53,3 +53,7 @@ Here are some tips for using the BoxWithConstraints composable:
 4. Use the fillMaxSize modifier to make a composable fill the maximum available size.    
 5. Use the fillMaxWidth modifier to make a composable fill the maximum available width.    
 
+By using the BoxWithConstraints composable and following these tips, you can create responsive UIs in Jetpack Compose that look and behave correctly on different devices and screen sizes.    
+
+__*Conclusion*__    
+The BoxWithConstraints composable is a powerful tool for creating responsive UIs in Jetpack Compose. By using the BoxWithConstraints composable and following best practices, you can create UIs that look and behave correctly on different devices and screen sizes.
