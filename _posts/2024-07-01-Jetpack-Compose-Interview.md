@@ -49,3 +49,15 @@ We can handle scrolling in Jetpack Compose by using the LazyColumn and LazyRow c
 
 11. __*What is the purpose of the remember function in Jetpack Compose?*__    
 The remember function is used to hold and manage state within a Composable.    
+
+12. __*How do you perform animations in Jetpack Compose?*__    
+In Jetpack Compose, we can perform animations by using the animate* functions that provide a simple way to animate properties of a Composable.    
+
+13. __*How do you implement a custom Composable in Jetpack Compose?*__    
+To implement a custom Composable in Jetpack Compose, we can create a new function that takes in the required parameters and returns the Composable.    
+
+14. __*How do you handle error handling in Jetpack Compose?*__    
+In Jetpack Compose, we can handle error handling by using the ErrorBoundary composable function that catches any exceptions thrown by its child Composables and displays an error message.    
+
+15. __*How do you implement a clickable Composable in Jetpack Compose?*__    
+To implement a clickable Composable in Jetpack Compose, we can use the clickable modifier to attach a callback that is triggered when the Composable is clicked.    
