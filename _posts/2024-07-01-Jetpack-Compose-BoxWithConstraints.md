@@ -42,3 +42,14 @@ fun MyComposable(modifier: Modifier = Modifier) {
     }
 }
 ```
+In this example, we’ve added the BoxWithConstraints composable as the root element of our layout. We've then used the constraints parameter to access the constraints of the parent layout. Finally, we've adjusted the layout of our composable based on the available space by checking the maximum width of the parent layout and adjusting the layout accordingly.    
+
+__*Tips for Using the BoxWithConstraints Composable*__    
+Here are some tips for using the BoxWithConstraints composable:    
+
+1. Use the minWidth, maxWidth, minHeight, and maxHeight properties of the constraints parameter to access the dimensions of the parent layout.    
+2. Use the aspectRatio property of the constraints parameter to set the aspect ratio of the parent layout.    
+3. Use the wrapContentSize modifier to ensure that the layout size matches the size of its contents.    
+4. Use the fillMaxSize modifier to make a composable fill the maximum available size.    
+5. Use the fillMaxWidth modifier to make a composable fill the maximum available width.    
+
