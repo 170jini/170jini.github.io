@@ -22,7 +22,6 @@ To use the BoxWithConstraints composable, follow these steps:
 
 Here’s an example:    
 ```kotlin
-<font size="10">
 @Composable
 fun MyComposable(modifier: Modifier = Modifier) {
     BoxWithConstraints(
@@ -42,7 +41,6 @@ fun MyComposable(modifier: Modifier = Modifier) {
         }
     }
 }
-</font>
 ```
 In this example, we’ve added the BoxWithConstraints composable as the root element of our layout. We've then used the constraints parameter to access the constraints of the parent layout. Finally, we've adjusted the layout of our composable based on the available space by checking the maximum width of the parent layout and adjusting the layout accordingly.    
 
