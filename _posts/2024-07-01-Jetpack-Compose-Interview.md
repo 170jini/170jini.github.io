@@ -31,3 +31,21 @@ State in Jetpack Compose is a value that can change over time and triggers a rec
 
 5. __*How do you handle user input in Jetpack Compose?*__    
 We can handle user input in Jetpack Compose by using state to hold the input value and attaching a callback to the UI element that triggers a state update when the input value changes.    
+
+6. __*What is the difference between Modifier and Style in Jetpack Compose?*__    
+Modifier is used to modify a specific aspect of a Composable, such as its size or padding. Style is used to modify multiple aspects of a Composable, such as its color and typography.    
+
+7. __*How do you navigate between screens in Jetpack Compose?*__    
+We can navigate between screens in Jetpack Compose by using the NavController and setting up a navigation graph that defines the flow between screens.    
+
+8. __*How do you handle data passing between screens in Jetpack Compose?*__    
+We can handle data passing between screens in Jetpack Compose by using arguments to pass data from one screen to another.    
+
+9. __*How do you handle orientation changes in Jetpack Compose?*__    
+In Jetpack Compose, we can handle orientation changes by using the rememberSaveable function to save the state of a Composable during configuration changes.    
+
+10. __*How do you handle scrolling in Jetpack Compose?*__    
+We can handle scrolling in Jetpack Compose by using the LazyColumn and LazyRow composable functions.    
+
+11. __*What is the purpose of the remember function in Jetpack Compose?*__    
+The remember function is used to hold and manage state within a Composable.    
