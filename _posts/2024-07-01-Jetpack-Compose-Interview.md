@@ -25,3 +25,9 @@ The basic building blocks of a Jetpack Compose UI are Composables. Composables a
 
 3. __*What is state in Jetpack Compose?*__    
 State in Jetpack Compose is a value that can change over time and triggers a recomposition of the UI when it changes.    
+
+4. __*What is the difference between @Composable and @Preview?*__    
+@Composable is a Kotlin annotation used to mark a function that describes a UI element or a group of UI elements. @Preview is a Kotlin annotation used to generate a preview of a composable function in Android Studio.    
+
+5. __*How do you handle user input in Jetpack Compose?*__    
+We can handle user input in Jetpack Compose by using state to hold the input value and attaching a callback to the UI element that triggers a state update when the input value changes.    
