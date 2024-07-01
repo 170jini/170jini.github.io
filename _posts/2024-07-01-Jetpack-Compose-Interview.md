@@ -61,3 +61,32 @@ In Jetpack Compose, we can handle error handling by using the ErrorBoundary comp
 
 15. __*How do you implement a clickable Composable in Jetpack Compose?*__    
 To implement a clickable Composable in Jetpack Compose, we can use the clickable modifier to attach a callback that is triggered when the Composable is clicked.    
+
+16. __*How do you implement a long press gesture in Jetpack Compose?*__    
+In Jetpack Compose, we can implement a long press gesture by using the LongPressGestureDetector composable and attaching a callback that is triggered when a long press gesture is detected.    
+
+17. __*How do you handle keyboard input in Jetpack Compose?*__    
+We can handle keyboard input in Jetpack Compose by using the TextField composable, which provides an editable text field that handles keyboard input.    
+
+18. __*How do you implement a custom theme in Jetpack Compose?*__    
+To implement a custom theme in Jetpack Compose, we can define a new MaterialTheme and set the required properties, such as colors and typography.    
+
+19. __*How do you perform asynchronous operations in Jetpack Compose?*__    
+In Jetpack Compose, we can perform asynchronous operations by using coroutines and suspending functions.    
+
+20. __*How do you handle accessibility in Jetpack Compose?*__    
+We can handle accessibility in Jetpack Compose by providing appropriate content descriptions and using the semantics modifier to provide additional accessibility information.    
+
+__*Tips to Ace Your Jetpack Compose Interview*__    
+Here are some tips to help you ace your Jetpack Compose interview:    
+
+1. Practice building UIs using Jetpack Compose.    
+2. Review the documentation and keep up with the latest updates.    
+3. Be familiar with common Jetpack Compose concepts and APIs.    
+4. Be prepared to explain your problem-solving approach and ability to write clean and efficient code.    
+5. Have a portfolio of Jetpack Compose projects that you can showcase.    
+
+By following these tips and being prepared for common Jetpack Compose interview questions, you can increase your chances of landing a job that involves Jetpack Compose.    
+
+__*Conclusion*__    
+Jetpack Compose is a powerful tool for building Android UIs, and it’s becoming increasingly popular among Android developers. By being prepared for Jetpack Compose interview questions and showcasing your skills and knowledge, you can position yourself as a valuable candidate for Jetpack Compose jobs.    
