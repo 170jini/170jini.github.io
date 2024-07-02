@@ -71,3 +71,121 @@ To define DAO interfaces in Room Database, follow these steps:
    1. Create an Interface: Define an interface that declares abstract methods for database operations. Each method represents a specific database operation, such as insert, update, delete, or query.    
 
    2. Annotate Methods: Annotate each method in the DAO interface with the appropriate Room annotations to specify the SQL query or operation to be performed. Room provides annotations such as @Insert, @Update, @Delete, and @Query for this purpose.    
+
+   3. Define Method Parameters and Return Types: Define method parameters to pass data to the database operations and specify the return type to receive the query results. You can use entity classes as method parameters and return types to interact with database entities.    
+
+```kotlin
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
+import androidx.room.Update
+
+@Dao
+interface UserDao {
+    @Insert
+    suspend fun insert(user: User)
+
+    @Update
+    suspend fun update(user: User)
+
+    @Query("SELECT * FROM users WHERE id = :userId")
+    suspend fun getUser(userId: Long): User?
+}
+```
+
+4. What are the key components of the Room Database library? Explain each component briefly.    
+
+   1. Entity: Entities represent the tables in the database. They are typically Java or Kotlin classes annotated with @Entity. Each entity class corresponds to a table in the database, and the fields in the class represent the columns of the table. Entities define the structure of the data to be stored in the database.    
+
+   2. DAO (Data Access Object): DAO serves as an interface for accessing and manipulating data stored in the database. DAO interfaces declare abstract methods for database operations such as insert, update, delete, and query. Each method in the DAO interface is annotated with @Insert, @Update, @Delete, or @Query to specify the database operation to be performed.    
+
+   3. Database: The Database class serves as the main access point for the underlying SQLite database. It is an abstract class that extends RoomDatabase and defines an abstract method that returns an instance of the DAO interface. The Database class is typically implemented as a singleton to ensure that only one instance of the database is created throughout the application lifecycle.    
+
+   4. TypeConverters: TypeConverters allow Room to convert custom data types to and from supported SQLite data types. They are used to handle complex data types that cannot be directly stored in the database, such as Date or custom enums. TypeConverters are annotated with @TypeConverter and provide methods for converting data between Java/Kotlin types and SQLite types.    
+
+   5. Database Migration: Database migration is the process of modifying the database schema to accommodate changes in the application requirements or data model. Room Database provides built-in support for database migration through migration classes. Migration classes define the changes to be applied to the database schema when upgrading from one version to another. Room automatically detects schema changes and executes the appropriate migration code during database initialization.    
+
+5. What are the steps involved in setting up Room Database in an Android application?    
+
+   1. Add Room Dependency: Open your app-level build.gradle file and add the Room dependency to the dependencies section:    
+
+```kotlin
+implementation "androidx.room:room-runtime:2.4.0"
+annotationProcessor "androidx.room:room-compiler:2.4.0"
+
+//Make sure to replace 2.4.0 with the latest version.
+```
+
+   2. Define Entity Classes: Create your entity classes that represent the tables in your database. Annotate these classes with @Entity and define the fields as columns    
+
+```kotlin
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "users")
+data class User(
+    @PrimaryKey(autoGenerate = true)
+    val id: Long = 0,
+    val name: String,
+    val age: Int
+)
+```
+
+   3. Create DAO Interface: Define a DAO interface that contains methods for interacting with your entities. Annotate each method with the appropriate Room annotations (@Insert, @Update, @Delete, @Query). For example:    
+
+```kotlin
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
+
+@Dao
+interface UserDao {
+    @Insert
+    suspend fun insert(user: User)
+
+    @Query("SELECT * FROM users")
+    suspend fun getAllUsers(): List<User>
+}
+```
+
+   4. Create Database Class: Create an abstract class that extends RoomDatabase. Define an abstract method that returns an instance of your DAO interface. Annotate this class with @Database and specify the list of entity classes it manages. For example:    
+
+```kotlin
+import androidx.room.Database
+import androidx.room.RoomDatabase
+
+@Database(entities = [User::class], version = 1)
+abstract class MyAppDatabase : RoomDatabase() {
+    abstract fun userDao(): UserDao
+}
+```
+
+   5. Initialize Room Database: Initialize your Room Database instance using a singleton pattern. Typically, this is done in your Application class or using a dependency injection framework like Dagger.    
+
+```kotlin
+import android.app.Application
+import androidx.room.Room
+
+class MyApp : Application() {
+    companion object {
+        lateinit var database: MyAppDatabase
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+        database = Room.databaseBuilder(
+            applicationContext,
+            MyAppDatabase::class.java, "myapp-database"
+        ).build()
+    }
+}
+```
+
+   6. Access Database Using DAO: Now, you can access your database using the DAO interface methods. For example:    
+
+```kotlin
+val userDao = MyApp.database.userDao()
+val users = userDao.getAllUsers()
+```
+
+These steps cover the basic setup of Room Database in an Android application.    
