@@ -10,7 +10,7 @@ minute: 1
 
 Room Database is an abstraction layer over SQLite, designed to simplify database interactions in Android applications. It offers compile-time query verification, annotation-based schema definition, and built-in support for LiveData and RxJava, making it a powerful and developer-friendly choice for implementing local data storage in Android apps.    
 
-1. What is Room Database and how does it differ from other persistence libraries in Android?    
+- What is Room Database and how does it differ from other persistence libraries in Android?    
 
 Annotation-based Schema Definition: Unlike other persistence libraries that require developers to write SQL queries for database schema creation and modification, Room Database allows developers to define the database schema using annotations in their data model classes. This approach reduces boilerplate code and makes the database schema more maintainable.    
 
@@ -22,7 +22,7 @@ Built-in Support for Database Migrations: Room Database provides built-in suppor
 
 Thread Safety and Database Access: Room Database provides built-in support for managing database access on background threads. It allows developers to execute database operations asynchronously without blocking the main UI thread, ensuring a smooth user experience and preventing ANR (Application Not Responding) errors.    
     
-2. How do you define entities in Room Database? What are the key annotations used for defining entities?    
+- How do you define entities in Room Database? What are the key annotations used for defining entities?    
 
 In Room Database, entities represent the tables within the database. They are typically Java or Kotlin classes that define the structure of the data to be stored in the database. Entities are annotated with specific Room annotations to define their properties and relationships with the database tables.    
 
@@ -52,7 +52,7 @@ data class User(
 )
 ```    
 
-3. Explain the role of DAO (Data Access Object) in Room Database. How do you define DAO interfaces?    
+- Explain the role of DAO (Data Access Object) in Room Database. How do you define DAO interfaces?    
 
 The DAO (Data Access Object) in Room Database serves as an interface between the database and the rest of the application. It provides methods for accessing and manipulating data stored in the database without exposing the underlying database implementation details. The primary role of DAO is to abstract away the complexity of database operations, making it easier for developers to interact with the database using high-level methods.    
 
@@ -93,7 +93,7 @@ interface UserDao {
 }
 ```    
 
-4. What are the key components of the Room Database library? Explain each component briefly.    
+- What are the key components of the Room Database library? Explain each component briefly.    
 
    1. Entity: Entities represent the tables in the database. They are typically Java or Kotlin classes annotated with @Entity. Each entity class corresponds to a table in the database, and the fields in the class represent the columns of the table. Entities define the structure of the data to be stored in the database.    
 
@@ -105,7 +105,7 @@ interface UserDao {
 
    5. Database Migration: Database migration is the process of modifying the database schema to accommodate changes in the application requirements or data model. Room Database provides built-in support for database migration through migration classes. Migration classes define the changes to be applied to the database schema when upgrading from one version to another. Room automatically detects schema changes and executes the appropriate migration code during database initialization.    
 
-5. What are the steps involved in setting up Room Database in an Android application?    
+- What are the steps involved in setting up Room Database in an Android application?    
 
    1. Add Room Dependency: Open your app-level build.gradle file and add the Room dependency to the dependencies section:    
 
