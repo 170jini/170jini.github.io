@@ -21,7 +21,7 @@ Integration with LiveData and RxJava: Room Database seamlessly integrates with L
 Built-in Support for Database Migrations: Room Database provides built-in support for database migrations, allowing developers to easily modify the database schema as the application evolves over time. Room automatically handles schema migrations by generating migration code based on the differences between the old and new database schemas, simplifying the process of database version management.    
 
 Thread Safety and Database Access: Room Database provides built-in support for managing database access on background threads. It allows developers to execute database operations asynchronously without blocking the main UI thread, ensuring a smooth user experience and preventing ANR (Application Not Responding) errors.    
-
+    
 2. How do you define entities in Room Database? What are the key annotations used for defining entities?    
 
 In Room Database, entities represent the tables within the database. They are typically Java or Kotlin classes that define the structure of the data to be stored in the database. Entities are annotated with specific Room annotations to define their properties and relationships with the database tables.    
@@ -50,7 +50,7 @@ data class User(
     @Ignore
     val isActive: Boolean
 )
-```
+```    
 
 3. Explain the role of DAO (Data Access Object) in Room Database. How do you define DAO interfaces?    
 
@@ -91,7 +91,7 @@ interface UserDao {
     @Query("SELECT * FROM users WHERE id = :userId")
     suspend fun getUser(userId: Long): User?
 }
-```
+```    
 
 4. What are the key components of the Room Database library? Explain each component briefly.    
 
