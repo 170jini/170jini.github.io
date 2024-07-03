@@ -90,7 +90,8 @@ fun Sample() {
 The unexpected behavior occurs when reading the state inside the Row scope, causing the entire composable to recompose and this is not desired, we only want recomposition when changes occur in Button1 and the newly added Row.    
 The reason for this behavior is because of the implementation of Row in Compose. It’s actually an inline function — a very interesting feature of Kotlin. Let’s deep dive into it.    
 __*Understanding Inline Functions in Kotlin*__    
-__*Example 1*__    
+__*Example 1*__
+
 ```kotlin
 fun main() {
     print("foo ")
