@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Use the APPLY Function to Configure Complex Objects— 100 Kotlin Tips in 100 Days"
-description: "Use the APPLY Function to Configure Complex Objects— 100 Kotlin Tips in 100 Days"
-summary: "Use the APPLY Function to Configure Complex Objects— 100 Kotlin Tips in 100 Days"
+title: "Kotlin Tip #19: Use the APPLY Function to Configure Complex Objects— 100 Kotlin Tips in 100 Days"
+description: "Kotlin Tip #19: Use the APPLY Function to Configure Complex Objects— 100 Kotlin Tips in 100 Days"
+summary: "Kotlin Tip #19: Use the APPLY Function to Configure Complex Objects— 100 Kotlin Tips in 100 Days"
 tags: 
 minute: 1
 ---
