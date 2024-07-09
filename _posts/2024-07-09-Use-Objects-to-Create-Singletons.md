@@ -34,3 +34,33 @@ public class MySingleton {
     }
 }
 ```
+
+The MySingleton class ensures that only one instance of itself will exist during the lifecycle of the application by making the constructor private, in other words, not allowing the class to be freely instantiated. The only way you can get an instance of this class is by calling the getInstance() method which will either instantiate the class if it hasn't been previously instantiated or by returning the already instance of the class.    
+
+In Kotlin, creating singletons is much more simple. All you have to do is create an object instead of a class:    
+```kotlin
+object MySingleton {
+    fun doSomething() {
+        println("Doing something...")
+    }
+}
+```
+
+This object keyword tells Kotlin to create a single instance of MySingleton class. By decompiling Kotlin bytecode for the MySingleton object, we find that the Kotlin compiler generates all the necessary code to ensure the properties of a singleton class, without the explicit boilerplate:    
+```kotlin
+public final class MySingleton {
+   public static final MySingleton INSTANCE;
+
+   private MySingleton() {}
+
+   static {
+      INSTANCE = new MySingleton();
+   }
+
+    public final void doSomething() {
+      System.out.println("Doing something...");
+   }
+}
+```
+
+Once again, Kotlin shows how its philosophy of blending functionality with simplicity, allows developers to focus more on solving business problems and less on boilerplate code.
