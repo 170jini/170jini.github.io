@@ -1,0 +1,15 @@
+I"5<ol>
+  <li><a href="https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-doc">웹문서</a>  <br />
+https://dapi.kakao.com/v2/search/web?query=이효리&amp;sort=accuracy&amp;page=1&amp;size=10</li>
+  <li><a href="https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-video">동영상</a>    <br />
+https://dapi.kakao.com/v2/search/vclip?query=AOA&amp;sort=accuracy&amp;page=1&amp;size=15</li>
+  <li><a href="https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-image">이미지</a>  <br />
+https://dapi.kakao.com/v2/search/image?query=설현&amp;sort=accuracy&amp;page=1&amp;size=80</li>
+  <li><a href="https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-blog">블로그</a>  <br />
+https://dapi.kakao.com/v2/search/blog?query=https://brunch.co.kr/@tourism 집짓기&amp;sort=accuracy&amp;page=1&amp;size=10</li>
+  <li><a href="https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-book">책</a>  <br />
+https://dapi.kakao.com/v3/search/book?query=미움받을 용기&amp;sort=accuracy&amp;page=1&amp;size=10</li>
+  <li><a href="https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-cafe">카페</a>  <br />
+https://dapi.kakao.com/v2/search/cafe?query=아이유&amp;sort=accuracy&amp;page=1&amp;size=10</li>
+</ol>
+:ET

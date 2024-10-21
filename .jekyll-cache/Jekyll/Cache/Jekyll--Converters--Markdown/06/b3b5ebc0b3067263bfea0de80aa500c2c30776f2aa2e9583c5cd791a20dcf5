@@ -1,0 +1,15 @@
+I"*<ol>
+  <li><a href="https://developers.kakao.com/docs/latest/ko/local/dev-guide#address-coord">주소</a>  <br />
+https://dapi.kakao.com/v2/local/search/address.json?query=전북 삼성동 100&amp;analyze_type=similar&amp;page=1&amp;size=10</li>
+  <li><a href="https://developers.kakao.com/docs/latest/ko/local/dev-guide#coord-to-district">좌표로 행정구역정보</a>  <br />
+https://dapi.kakao.com/v2/local/geo/coord2regioncode.json?x=127.1086228&amp;y=37.4012191&amp;input_coord=WGS84&amp;output_coord=WGS84</li>
+  <li><a href="https://developers.kakao.com/docs/latest/ko/local/dev-guide#coord-to-address">좌표로 주소</a>  <br />
+https://dapi.kakao.com/v2/local/geo/coord2address.json?x=127.1086228&amp;y=37.4012191&amp;input_coord=WGS84</li>
+  <li><a href="https://developers.kakao.com/docs/latest/ko/local/dev-guide#trans-coord">좌표계 변환</a>  <br />
+https://dapi.kakao.com/v2/local/geo/transcoord.json?x=160710.37729270622&amp;y=-4388.879299157299&amp;input_coord=WTM&amp;output_coord=WGS84</li>
+  <li><a href="https://developers.kakao.com/docs/latest/ko/local/dev-guide#search-by-keyword">키워드로 장소</a>  <br />
+https://dapi.kakao.com/v2/local/search/keyword.json?query=카카오프렌즈&amp;y=37.514322572335935&amp;x=127.06283102249932&amp;radius=20000</li>
+  <li><a href="https://developers.kakao.com/docs/latest/ko/local/dev-guide#search-by-category">카테고리로 장소</a>  <br />
+https://dapi.kakao.com/v2/local/search/category.json?category_group_code=PM9&amp;y=37.514322572335935&amp;x=127.06283102249932&amp;radius=20000</li>
+</ol>
+:ET
